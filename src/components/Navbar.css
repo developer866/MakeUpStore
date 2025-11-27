@@ -2,14 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid white; */
   border-radius: 10px;
   padding: 10px;
 }
 
 /* Logo styling */
 .logo {
-  width: 30%;
+  width: 50%;
   background: white;
   border-radius: 10px;
   padding: 10px;
@@ -24,14 +23,15 @@
 @media (min-width: 768px) {
   .cart {
     display: flex;
-    min-width: 20%;
+    min-width: 10%;
     justify-content: space-between;
+    gap: 25px;
   }
 }
-.mobilecart{
+.mobilecart {
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   gap: 10px;
 }
 
@@ -65,9 +65,16 @@
     background: white;
     padding: 10px;
     border-radius: 10px;
-    min-width: 500px;
-    /* text-align: center; */
+    min-width: 20%;
     justify-content: center;
+    p{
+      /* font-size: 3rem; */
+      /* background:black;*/
+      border:1px solid black;
+      text-a
+      min-width:100px;
+
+    }
   }
 
   .navbar-links a {
@@ -101,14 +108,16 @@
 /* Mobile popup menu */
 .menu-popup {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 30%;
+  text-align: center;
+  top: 18px;
+  right: 10px;
+  width: 40%;
   background: white;
-  padding: 10px;
-  border-radius: 10px 0px 0px 10px;
+  padding: 10px 0px;
+  border-radius: 10px 10px 10px 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   animation: slideIn 0.5s ease;
+  opacity: 1;
 }
 
 @keyframes slideIn {
@@ -128,7 +137,7 @@
 }
 
 .close-icon {
-  width: 30px;
+  width: 20px;
   cursor: pointer;
 }
 
@@ -137,21 +146,15 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  color: white;
 }
 
 .menu-links a {
   text-decoration: none;
-
   color: Black;
-
+  font-size: 1rem;
   transition: color 0.3s;
 }
 
 .menu-links a:hover {
   color: #a0430a;
-}
-p {
-  padding: 0;
-  margin: 0;
 }

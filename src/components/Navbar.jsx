@@ -23,16 +23,12 @@ function Navbar() {
               <Link to="/">
                 <p>Home</p>
               </Link>
-
               <Link to="/Products">
                 <p>Products</p>
               </Link>
               <Link to="/Services">
                 <p>Services</p>
               </Link>
-              {/* <Link to="/BookService">
-                <p>Book Now</p>
-              </Link> */}
               <Link to="/Contact">
                 <p>Contact Us</p>
               </Link>
@@ -44,14 +40,14 @@ function Navbar() {
 
               <Button text="Book Service" link='Booking' />
             </div>
-            <Carticon totalItem="12" />
+            <Carticon />
           </section>
 
           {/* mobile menu */}
           <section className="mobile-menu">
             {/* hamburger icon */}
             <div className="mobilecart">
-              <Carticon totalItem="12" />
+              <Carticon />
               <img
                 src="/Images/bars-solid-full.svg"
                 className="menu-icon"

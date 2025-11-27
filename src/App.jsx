@@ -8,6 +8,7 @@ import Checkout from './pages/Checkout'
 import Contact from './pages/Contact'
 import Productdetails from './pages/Productdetails'
 import Products from './pages/Products'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Productdetails" element={<Productdetails />} />
         <Route path="/Checkout" element={<Checkout />} />
       </Routes>
+      <Footer />
     </main>
   )
 }
