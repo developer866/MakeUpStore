@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import Carticon from "./Carticon";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -37,9 +38,9 @@ function Navbar() {
               </Link>
             </ul>
           </section>
-          <section className="">
-            <Button text="Book Service" link='Booking' />
-            <Button text="Cart" link='Booking' />
+          <section className="cart">
+            <Button  text="Book Service" link='Booking' />
+            <Carticon totalItem="12"/>
           </section>
 
           {/* mobile menu */}

@@ -15,7 +15,12 @@
 .navbar-logo {
   width: 30%;
 }
-
+.cart{
+  display: flex;
+}
+.BookServiceButton{
+  display: hidden;
+}
 @media (min-width: 768px) {
   .navbar-logo {
     width: 12%;
