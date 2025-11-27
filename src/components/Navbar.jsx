@@ -67,18 +67,18 @@ function Navbar() {
                   />
                 </div>
                 <ul className="menu-links">
-                  <Link to="/" onClick={handleClicks}>
+                  <NavLink to="/" onClick={handleClicks}>
                     <h4>Home</h4>
-                  </Link>
-                  <Link to="/Project" onClick={handleClicks}>
+                  </NavLink>
+                  <NavLink to="/Project" onClick={handleClicks}>
                     <h4>Product</h4>
-                  </Link>
-                  <Link to="/Services" onClick={handleClicks}>
+                  </NavLink>
+                  <NavLink to="/Services" onClick={handleClicks}>
                     <h4>Services</h4>
-                  </Link>
-                  <Link to="/Contact" onClick={handleClicks}>
+                  </NavLink>
+                  <NavLink to="/Contact" onClick={handleClicks}>
                     <h4>Contact</h4>
-                  </Link>
+                  </NavLink>
                 </ul>
               </div>
             )}

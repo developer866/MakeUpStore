@@ -1,0 +1,16 @@
+.footer-sections {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer {
+  height: 200px;
+  min-width: 40%;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

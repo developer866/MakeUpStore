@@ -1,7 +1,17 @@
-export default function Footer (){
-    return(
+import "./footer.css";
+
+export default function Footer() {
+    return (
         <>
-        <h1>Footer</h1>
+            <main className="footer">
+                <div className="footer-sections">
+                    <section><h1>Mali's Store</h1></section>
+                    <section><h1>Mali's Store</h1></section>
+                    <section><h1>Mali's Store</h1></section>
+                    <section><h1>Mali's Store</h1></section>
+                </div>
+                <section>copyright 2025./2023. </section>
+            </main>
         </>
     )
 }
