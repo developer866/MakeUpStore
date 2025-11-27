@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import Carticon from "./Carticon";
 
@@ -20,18 +20,18 @@ function Navbar() {
           {/* navigation */}
           <section>
             <ul className="navbar-links">
-              <Link to="/">
+              <NavLink to="/">
                 <p>Home</p>
-              </Link>
-              <Link to="/Products">
+              </NavLink>
+              <NavLink to="/Products">
                 <p>Products</p>
-              </Link>
-              <Link to="/Services">
+              </NavLink>
+              <NavLink to="/Services">
                 <p>Services</p>
-              </Link>
-              <Link to="/Contact">
+              </NavLink>
+              <NavLink to="/Contact">
                 <p>Contact Us</p>
-              </Link>
+              </NavLink>
             </ul>
           </section>
 

@@ -67,25 +67,39 @@
     border-radius: 10px;
     min-width: 20%;
     justify-content: center;
-    p{
-      /* font-size: 3rem; */
-      /* background:black;*/
-      border:1px solid black;
-      text-a
-      min-width:100px;
-
+    p {
+   
+      text-align: center;
+      min-width: 80px;
     }
   }
 
   .navbar-links a {
     text-decoration: none;
-    color: black;
     transition: color 0.3s;
   }
 
   .navbar-links a:hover {
     color: white;
   }
+  .navbar-links p {
+    position: relative;
+    padding: 6px 4px;
+    cursor: pointer;
+    color: #333;
+    transition: 0.3s;
+    border-radius:10px ;
+  }
+  .navbar-links a.active p {
+    color: black;
+    background: linear-gradient(
+      to top,
+      rgba(255, 182, 193, 1),
+      rgba(255, 182, 193, 0)
+    );
+  }
+
+
 }
 
 /* Mobile menu icon */
