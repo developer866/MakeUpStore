@@ -1,28 +1,52 @@
-.logo {
-  /* font-size: 1.3rem; */
-}
-
 .navbar {
-  /* width: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid;
+  /* border: 1px solid white; */
+  border-radius: 10px;
   padding: 10px;
 }
 
 /* Logo styling */
-.navbar-logo {
+.logo {
   width: 30%;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
 }
-.cart{
-  display: flex;
-}
-.BookServiceButton{
-  display: hidden;
+.cart {
+  display: none;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
 }
 @media (min-width: 768px) {
-  .navbar-logo {
+  .cart {
+    display: flex;
+    min-width: 20%;
+    justify-content: space-between;
+  }
+}
+.mobilecart{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+}
+
+.BookServiceButton {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .BookServiceButton {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo {
     width: 12%;
   }
 }
@@ -38,16 +62,22 @@
     gap: 25px;
     list-style: none;
     font-weight: bold;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 500px;
+    /* text-align: center; */
+    justify-content: center;
   }
 
   .navbar-links a {
     text-decoration: none;
-    color:black;
+    color: black;
     transition: color 0.3s;
   }
 
   .navbar-links a:hover {
-    color: #a0430a;
+    color: white;
   }
 }
 
@@ -107,14 +137,14 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  color: #a0430a;
+  color: white;
 }
 
 .menu-links a {
   text-decoration: none;
-  /* color: #555; */
-  color: #a0430a;
-  /* font-size: 1.1rem; */
+
+  color: Black;
+
   transition: color 0.3s;
 }
 

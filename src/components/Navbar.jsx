@@ -23,7 +23,7 @@ function Navbar() {
               <Link to="/">
                 <p>Home</p>
               </Link>
-          
+
               <Link to="/Products">
                 <p>Products</p>
               </Link>
@@ -38,20 +38,27 @@ function Navbar() {
               </Link>
             </ul>
           </section>
+
           <section className="cart">
-            <Button  text="Book Service" link='Booking' />
-            <Carticon totalItem="12"/>
+            <div className='BookServiceButton' >
+
+              <Button text="Book Service" link='Booking' />
+            </div>
+            <Carticon totalItem="12" />
           </section>
 
           {/* mobile menu */}
           <section className="mobile-menu">
             {/* hamburger icon */}
-            <img
-              src="/Images/bars-solid-full.svg"
-              className="menu-icon"
-              alt="menu"
-              onClick={handleClicks}
-            />
+            <div className="mobilecart">
+              <Carticon totalItem="12" />
+              <img
+                src="/Images/bars-solid-full.svg"
+                className="menu-icon"
+                alt="menu"
+                onClick={handleClicks}
+              />
+            </div>
 
             {showMenu && (
               <div className="menu-popup">
