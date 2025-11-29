@@ -1,20 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './home.css'
+import Testimonials from '../components/Testimonial';
 
 function Home() {
   return (
-    <main className='home-container'>
-      <div className='home-content'>
-        <section className='hero-section'>
-          <h1>Welcome to Mali's Touch</h1>
-          <p>Your one-stop shop for beauty products and makeup services.</p>
-          <p>Discover premium beauty products and professional makeup services tailored just for you. From luxurious skincare to stunning makeup looks, we bring out your natural beauty.</p>
-          <button className='cta-button'>Explore Our Services</button>
-        </section>
-        <section className='slideshow-section'>
-          <InfiniteSlideshow />
-        </section>
+    <main >
+      <div className='home-container'>
+
+        <div className='home-content'>
+          <section className='hero-section'>
+            <h1>Welcome to Mali's Touch</h1>
+            <p>Your one-stop shop for beauty products and makeup services.</p>
+            <p>Discover premium beauty products and professional makeup services tailored just for you. From luxurious skincare to stunning makeup looks, we bring out your natural beauty.</p>
+            <button className='cta-button'>Explore Our Services</button>
+          </section>
+          <section className='slideshow-section'>
+            <InfiniteSlideshow />
+          </section>
+        </div>
       </div>
+
+      <section>
+        <Testimonials />
+      </section>
     </main>
   )
 }
@@ -102,3 +110,5 @@ function InfiniteSlideshow() {
     </div>
   );
 }
+
+

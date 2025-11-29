@@ -9,6 +9,7 @@ import Contact from './pages/Contact'
 import Productdetails from './pages/Productdetails'
 import Products from './pages/Products'
 import Footer from './components/Footer'
+import Services from './pages/Services'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Products" element={<Products />} />
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Services" element={<Services />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Productdetails" element={<Productdetails />} />
         <Route path="/Checkout" element={<Checkout />} />

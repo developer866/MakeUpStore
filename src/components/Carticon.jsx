@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
 export default function DynamicCart() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
