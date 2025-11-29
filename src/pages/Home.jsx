@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './home.css'
+import About from '../components/About';
 import Testimonials from '../components/Testimonial';
 
 function Home() {
@@ -19,6 +20,9 @@ function Home() {
           </section>
         </div>
       </div>
+      <section>
+        <About />
+      </section>
 
       <section>
         <Testimonials />

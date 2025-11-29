@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Testimonial.css';
 
 function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [filter, setFilter] = useState('all');
 
   const testimonials = [
     {
@@ -12,8 +11,9 @@ function Testimonials() {
       role: 'Bride',
       image: 'Images/client-1.jpg',
       rating: 5,
-      text: 'Mali\'s Touch made my wedding day absolutely perfect! The bridal makeup was flawless and lasted all day. I felt like a queen and received so many compliments. Highly recommend!',
-      service: 'Bridal Makeup'
+      text: 'Mali\'s Touch made my wedding day absolutely perfect! The bridal makeup was flawless and lasted all day. I felt like a queen and received so many compliments.',
+      service: 'Bridal Makeup',
+      category: 'makeup'
     },
     {
       id: 2,
@@ -21,8 +21,9 @@ function Testimonials() {
       role: 'Corporate Executive',
       image: 'Images/client-2.jpg',
       rating: 5,
-      text: 'I always get my makeup done here before important meetings and events. The team is professional, punctual, and knows exactly what look works for me. Best beauty service in Lagos!',
-      service: 'Event Makeup'
+      text: 'I always get my makeup done here before important meetings and events. The team is professional, punctual, and knows exactly what look works for me.',
+      service: 'Event Makeup',
+      category: 'makeup'
     },
     {
       id: 3,
@@ -31,7 +32,8 @@ function Testimonials() {
       image: 'Images/client-3.jpg',
       rating: 5,
       text: 'As someone who works in fashion, I\'m very particular about makeup. Mali\'s Touch never disappoints. Their attention to detail and use of quality products is outstanding!',
-      service: 'Photoshoot Makeup'
+      service: 'Photoshoot Makeup',
+      category: 'makeup'
     },
     {
       id: 4,
@@ -40,7 +42,8 @@ function Testimonials() {
       image: 'Images/client-4.jpg',
       rating: 5,
       text: 'The makeup masterclass was worth every penny! I learned so much about techniques and product selection. The instructors were patient and answered all my questions.',
-      service: 'Makeup Training'
+      service: 'Makeup Training',
+      category: 'training'
     },
     {
       id: 5,
@@ -48,8 +51,9 @@ function Testimonials() {
       role: 'Entrepreneur',
       image: 'Images/client-5.jpg',
       rating: 5,
-      text: 'Their skincare consultation changed my life! Finally found products that work for my skin type. My complexion has improved dramatically. Thank you Mali\'s Touch!',
-      service: 'Skincare Consultation'
+      text: 'Their skincare consultation changed my life! Finally found products that work for my skin type. My complexion has improved dramatically.',
+      service: 'Skincare Consultation',
+      category: 'skincare'
     },
     {
       id: 6,
@@ -57,40 +61,22 @@ function Testimonials() {
       role: 'Model',
       image: 'Images/client-6.jpg',
       rating: 5,
-      text: 'I\'ve tried many beauty services in Lagos, but Mali\'s Touch is simply the best. Professional, creative, and always delivers exceptional results. My go-to beauty spot!',
-      service: 'Full Glam Makeup'
+      text: 'I\'ve tried many beauty services in Lagos, but Mali\'s Touch is simply the best. Professional, creative, and always delivers exceptional results.',
+      service: 'Full Glam Makeup',
+      category: 'makeup'
     }
   ];
 
-  useEffect(() => {
-    if (!isAutoPlaying) return;
+  const categories = [
+    { id: 'all', name: 'All Reviews' },
+    { id: 'makeup', name: 'Makeup' },
+    { id: 'skincare', name: 'Skincare' },
+    { id: 'training', name: 'Training' }
+  ];
 
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, testimonials.length]);
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+  const filteredTestimonials = filter === 'all' 
+    ? testimonials 
+    : testimonials.filter(t => t.category === filter);
 
   const renderStars = (rating) => {
     return [...Array(5)].map((_, index) => (
@@ -107,53 +93,42 @@ function Testimonials() {
         <p>Real stories from real clients who experienced the Mali's Touch difference</p>
       </div>
 
-      <div className="testimonials-slider">
-        <button className="nav-btn prev-btn" onClick={prevSlide} aria-label="Previous testimonial">
-          ‹
-        </button>
-
-        <div className="testimonials-wrapper">
-          <div 
-            className="testimonials-track"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      <div className="filter-buttons">
+        {categories.map(category => (
+          <button
+            key={category.id}
+            className={`filter-btn ${filter === category.id ? 'active' : ''}`}
+            onClick={() => setFilter(category.id)}
           >
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card">
-                <div className="quote-icon">"</div>
-                <div className="testimonial-content">
-                  <div className="stars-rating">
-                    {renderStars(testimonial.rating)}
-                  </div>
-                  <p className="testimonial-text">{testimonial.text}</p>
-                  <div className="client-info">
-                    <div className="client-image">
-                      <img src={testimonial.image} alt={testimonial.name} />
-                    </div>
-                    <div className="client-details">
-                      <h3 className="client-name">{testimonial.name}</h3>
-                      <p className="client-role">{testimonial.role}</p>
-                      <span className="service-badge">{testimonial.service}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <button className="nav-btn next-btn" onClick={nextSlide} aria-label="Next testimonial">
-          ›
-        </button>
+            {category.name}
+          </button>
+        ))}
       </div>
 
-      <div className="testimonial-dots">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${currentIndex === index ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
+      <div className="testimonials-grid">
+        {filteredTestimonials.map((testimonial) => (
+          <div key={testimonial.id} className="testimonial-card">
+            <div className="card-header">
+              <div className="client-image">
+                <img src={testimonial.image} alt={testimonial.name} />
+              </div>
+              <div className="client-info">
+                <h3 className="client-name">{testimonial.name}</h3>
+                <p className="client-role">{testimonial.role}</p>
+              </div>
+            </div>
+            
+            <div className="stars-rating">
+              {renderStars(testimonial.rating)}
+            </div>
+
+            <p className="testimonial-text">{testimonial.text}</p>
+
+            <div className="card-footer">
+              <span className="service-badge">{testimonial.service}</span>
+              <div className="quote-mark">"</div>
+            </div>
+          </div>
         ))}
       </div>
 
@@ -169,6 +144,10 @@ function Testimonials() {
         <div className="stat-item">
           <h3>98%</h3>
           <p>Client Satisfaction</p>
+        </div>
+        <div className="stat-item">
+          <h3>3+</h3>
+          <p>Years Experience</p>
         </div>
       </div>
     </div>
