@@ -70,7 +70,7 @@ function Navbar() {
                   <NavLink to="/" onClick={handleClicks}>
                     <h4>Home</h4>
                   </NavLink>
-                  <NavLink to="/Project" onClick={handleClicks}>
+                  <NavLink to="/Products" onClick={handleClicks}>
                     <h4>Product</h4>
                   </NavLink>
                   <NavLink to="/Services" onClick={handleClicks}>
