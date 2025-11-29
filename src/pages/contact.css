@@ -1,11 +1,11 @@
 .contact-container {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   width: 90%;
-  margin: 40px auto;
+  margin: 0 auto;
   padding: 20px;
   flex-wrap: wrap;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   /* border: 1px solid #ddd; */
 }
 
@@ -55,21 +55,24 @@
 }
 
 .highlight {
-  color: #6c63ff;
+  color: #d946ef;
   font-weight: 500;
 }
 
 .contact-form {
   flex: 1 1 400px;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
-  .contact-form {
+    .contact-form {
     padding: 10px;
     width: 90%;
     margin: 0 auto;
+    border: 1px solid;
+    
   }
 }
 
@@ -85,11 +88,18 @@
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
+  font-family: inherit;
+}
+
+.contact-form select {
+  cursor: pointer;
+  background-color: white;
 }
 
 .name-row {

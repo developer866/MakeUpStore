@@ -5,19 +5,19 @@ function Contact() {
   const contactInfo = [
     {
       title: "Chat to us",
-      subtitle: "Our friendly team is here to help.",
+      subtitle: "Our beauty team is here to help.",
       email: "info@malistouch.com",
       icon: "💬"
     },
     {
-      title: "Office",
-      subtitle: "Come say hello at our office HQ.",
+      title: "Visit Our Studio",
+      subtitle: "Come say hello at our beauty studio.",
       address: "123 Beauty Lane, Lekki Phase 1, Lagos, Nigeria",
-      icon: "🏢"
+      icon: "💄"
     },
     {
-      title: "Phone",
-      subtitle: "Mon-Fri from 9am to 7pm.",
+      title: "Call Us",
+      subtitle: "Mon-Fri: 9am-7pm | Sat-Sun: 10am-6pm",
       phone: "+234 802 345 6789",
       icon: "📞"
     }
@@ -26,8 +26,8 @@ function Contact() {
   return (
     <div className="contact-container">
       <div className="contact-info">
-        <h2>Get in touch</h2>
-        <p>We'd love to hear from you. Our friendly team is always here to chat.</p>
+        <h1>Book Your Appointment</h1>
+        <p>We'd love to help you look and feel amazing. Our beauty experts are ready to transform your look.</p>
 
         {contactInfo.map((item, index) => (
           <div key={index} className="contact-card">
@@ -49,11 +49,21 @@ function Contact() {
             <input type="text" placeholder="First name" required />
             <input type="text" placeholder="Last name" required />
           </div>
-          <input type="email" placeholder="Email" required />
-          <input type="text" placeholder="Phone number" />
-          <textarea placeholder="Message" required></textarea>
+          <input type="email" placeholder="Email address" required />
+          <input type="tel" placeholder="Phone number" required />
+          <select required>
+            <option value="">Select a service</option>
+            <option value="bridal-makeup">Bridal Makeup</option>
+            <option value="event-makeup">Event Makeup</option>
+            <option value="skincare">Skincare Treatment</option>
+            <option value="hair-styling">Hair Styling</option>
+            <option value="nail-care">Nail Care</option>
+            <option value="training">Makeup Training</option>
+            <option value="other">Other</option>
+          </select>
+          <textarea placeholder="Tell us about your beauty needs..." required></textarea>
 
-          <button type="submit">Send message</button>
+          <button type="submit">Book Appointment</button>
         </form>
       </div>
     </div>

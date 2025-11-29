@@ -23,11 +23,11 @@ function Navbar() {
               <NavLink to="/">
                 <p>Home</p>
               </NavLink>
-              <NavLink to="/Products">
-                <p>Beauty Products</p>
-              </NavLink>
               <NavLink to="/Services">
                 <p>Makeup Services</p>
+              </NavLink>
+              <NavLink to="/Products">
+                <p>Beauty Products</p>
               </NavLink>
               <NavLink to="/Contact">
                 <p>Contact Us</p>
