@@ -43,29 +43,6 @@ function Contact() {
         ))}
       </div>
 
-      <div className="contact-form">
-        <form>
-          <div className="name-row">
-            <input type="text" placeholder="First name" required />
-            <input type="text" placeholder="Last name" required />
-          </div>
-          <input type="email" placeholder="Email address" required />
-          <input type="tel" placeholder="Phone number" required />
-          <select required>
-            <option value="">Select a service</option>
-            <option value="bridal-makeup">Bridal Makeup</option>
-            <option value="event-makeup">Event Makeup</option>
-            <option value="skincare">Skincare Treatment</option>
-            <option value="hair-styling">Hair Styling</option>
-            <option value="nail-care">Nail Care</option>
-            <option value="training">Makeup Training</option>
-            <option value="other">Other</option>
-          </select>
-          <textarea placeholder="Tell us about your beauty needs..." required></textarea>
-
-          <button type="submit">Book Appointment</button>
-        </form>
-      </div>
     </div>
   );
 }

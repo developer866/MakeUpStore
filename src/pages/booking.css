@@ -1,0 +1,452 @@
+/* Booking Container */
+.booking-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+/* Header */
+.booking-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.booking-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.booking-header p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #64748b;
+}
+
+/* Progress Bar */
+.progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active .step-number {
+  background: #1e293b;
+  color: white;
+}
+
+.progress-step span {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.progress-step.active span {
+  color: #1e293b;
+}
+
+.progress-line {
+  width: 100px;
+  height: 3px;
+  background: #e2e8f0;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+}
+
+.progress-line.active {
+  background: #1e293b;
+}
+
+/* Booking Form */
+.booking-form {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-content {
+  min-height: 400px;
+}
+
+.step-content h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #1e293b;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-option {
+  padding: 2rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-option:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-option.selected {
+  border-color: #1e293b;
+  background: #f8fafc;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-option h3 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.service-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.service-duration {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Section */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+/* Artists Grid */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.artist-card {
+  padding: 1.5rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.artist-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-4px);
+}
+
+.artist-card.selected {
+  border-color: #1e293b;
+  background: #f8fafc;
+}
+
+.artist-image {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.artist-card h4 {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.artist-card p {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* DateTime Grid */
+.datetime-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.875rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1e293b;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Personal Info Form */
+.personal-info-form {
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Booking Summary */
+.booking-summary {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.booking-summary h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.summary-item span {
+  color: #64748b;
+}
+
+.summary-item strong {
+  color: #1e293b;
+}
+
+.summary-divider {
+  height: 2px;
+  background: #e2e8f0;
+  margin: 1rem 0;
+}
+
+.summary-item.total {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.summary-item.total span,
+.summary-item.total strong {
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.next-btn,
+.submit-btn,
+.back-btn {
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-btn,
+.submit-btn {
+  background: #1e293b;
+  color: white;
+  min-width: 200px;
+}
+
+.next-btn:hover:not(:disabled),
+.submit-btn:hover {
+  background: #334155;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.next-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.back-btn {
+  background: white;
+  color: #1e293b;
+  border: 2px solid #e2e8f0;
+}
+
+.back-btn:hover {
+  border-color: #1e293b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .progress-line {
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .booking-form {
+    padding: 1.5rem;
+  }
+
+  .progress-bar {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .progress-step span {
+    display: none;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .progress-line {
+    width: 40px;
+    margin: 0 0.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .service-option {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .datetime-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+  }
+
+  .next-btn,
+  .submit-btn,
+  .back-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-option h3 {
+    font-size: 0.9375rem;
+  }
+
+  .artists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-summary {
+    padding: 1rem;
+  }
+
+  .summary-item {
+    font-size: 0.875rem;
+  }
+}
