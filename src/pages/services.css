@@ -257,7 +257,8 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .services-container {
-    width: 95%;
+    /* margin-top: 10px; */
+    width: 90%;
     padding: 2rem 1rem;
   }
 
@@ -268,6 +269,8 @@
   .category-filter {
     gap: 0.75rem;
     margin-bottom: 2rem;
+    width: 90%;
+    margin: 10px auto;
   }
 
   .category-btn {

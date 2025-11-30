@@ -170,7 +170,8 @@
 /* Mobile Styles - Column Layout */
 @media (max-width: 768px) {
   .home-container {
-    width: 95%;
+    width: 50%;
+    margin:0 auto;
     padding: 1rem;
     min-height: auto;
   }
@@ -258,6 +259,8 @@
 
   .hero-section {
     gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .hero-section h1 {
@@ -275,6 +278,8 @@
 
   .slideshow-wrapper {
     height: 200px;
+    width: 90%;
+    margin: 0 auto;
     border-radius: 0.75rem;
   }
 

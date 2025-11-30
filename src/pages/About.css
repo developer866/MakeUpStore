@@ -265,10 +265,15 @@
 @media (max-width: 768px) {
   .about-hero {
     padding: 2.5rem 1rem;
+
+    width: 80%;
+
+    margin: 0 auto;
   }
 
   .about-content {
-    width: 95%;
+    width: 90%;
+    margin: 0 auto;
     padding: 2rem 1rem;
   }
 

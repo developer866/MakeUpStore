@@ -69,7 +69,7 @@
 }
 
 .contact-visual-box {
-  width: 100%;
+  /* width: 100%; */
   padding: 3rem 2rem;
   border-radius: 1rem;
   background: #f1f5f9;
@@ -102,7 +102,8 @@
 /* Mobile Layout - Column */
 @media (max-width: 768px) {
   .contact-container {
-    width: 95%;
+    width: 90%;
+    margin: 0 auto;
     padding: 1rem;
     min-height: auto;
   }
@@ -119,7 +120,8 @@
 
   .contact-visual-section {
     order: 2;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .contact-visual-box {

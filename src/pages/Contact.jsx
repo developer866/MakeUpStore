@@ -20,6 +20,7 @@ export default function Contact() {
             <textarea placeholder="Your Message" rows="5" required></textarea>
             <button className="cta-button">Send Message</button>
           </form>
+
         </section>
 
         {/* RIGHT — IMAGE OR INFO */}
