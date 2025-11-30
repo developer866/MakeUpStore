@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './home.css'
-import About from '../components/About';
+import About from './About';
 import Testimonials from '../components/Testimonial';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <main >
       <div className='home-container'>
@@ -13,7 +15,7 @@ function Home() {
             <h1>Welcome to Mali's Touch</h1>
             <p>Your one-stop shop for beauty products and makeup services.</p>
             <p>Discover premium beauty products and professional makeup services tailored just for you. From luxurious skincare to stunning makeup looks, we bring out your natural beauty.</p>
-            <button className='cta-button'>Explore Our Services</button>
+            <button className='cta-button'     onClick={() => navigate('/services')}>Explore Our Services</button>
           </section>
           <section className='slideshow-section'>
             <InfiniteSlideshow />

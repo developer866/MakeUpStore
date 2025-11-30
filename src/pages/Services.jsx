@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './services.css';
+import { useNavigate } from 'react-router-dom';
 
 function Services() {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const services = [
@@ -116,8 +118,8 @@ function Services() {
           <div key={service.id} className="service-card">
             <div className="service-image">
               <img src={service.image} alt={service.title} />
-              <div className="service-overlay">
-                <button className="book-btn">Book Now</button>
+              <div className="service-overlay" onClick={() => navigate('/booking')}>
+                <button className="book-btn" >Book Now</button>
               </div>
             </div>
             <div className="service-content">

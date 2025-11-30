@@ -1,148 +1,139 @@
+/* Contact Container */
 .contact-container {
-  display: flex;
-  gap: 20px;
   width: 90%;
+  min-height: 80vh;
   margin: 0 auto;
-  padding: 20px;
-  flex-wrap: wrap;
-  /* border-radius: 10px; */
-  /* border: 1px solid #ddd; */
-}
-
-.contact-info {
-  flex: 1 1 200px;
+  padding: 2rem;
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.contact-info h2 {
-  font-size: 28px;
-  margin-bottom: 5px;
-}
-
-.contact-info p {
-  font-size: 14px;
-  color: #555;
-}
-
-.contact-card {
-  display: flex;
-  gap: 10px;
-  border-radius: 12px;
-  align-items: flex-start;
   align-items: center;
-  gap: 10px;
-  width: 80%;
+  justify-content: center;
 }
 
-.contact-card .icon {
-  font-size: 22px;
-  color: black;
-  flex-shrink: 0;
-  margin-top: 3px;
+/* Two-column layout */
+.contact-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
 }
 
-.contact-card .contact-details h3 {
-  margin: 0;
-  font-size: 16px;
-}
-
-.contact-card .contact-details p {
-  margin: 2px 0;
-  font-size: 14px;
-  color: #333;
-}
-
-.highlight {
-  color: #d946ef;
-  font-weight: 500;
-}
-
-.contact-form {
-  flex: 1 1 400px;
-  border-radius: 12px;
-  padding: 10px;
-  margin: 0 auto;
-}
-
-@media (max-width: 600px) {
-    .contact-form {
-    padding: 10px;
-    width: 90%;
-    margin: 0 auto;
-    border: 1px solid;
-    
-  }
-}
-
-.contact-form form {
+/* Left side (text + form) */
+.contact-info-section {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
-.contact-form .name-row {
+.contact-info-section h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1e293b;
+  font-weight: bold;
+  margin: 0;
+}
+
+.contact-info-section p {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Form Styling */
+.contact-form {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .contact-form input,
-.contact-form select,
 .contact-form textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  font-family: inherit;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  color: #1e293b;
+  outline: none;
+  transition: border 0.3s ease;
 }
 
-.contact-form select {
-  cursor: pointer;
-  background-color: white;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #1e293b;
 }
 
-.name-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.name-row input {
+/* Right Side Visual Box */
+.contact-visual-section {
   flex: 1;
 }
 
-.contact-form textarea {
-  resize: vertical;
-  min-height: 80px;
+.contact-visual-box {
+  width: 100%;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  background: #f1f5f9;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
-.contact-form .form-footer {
-  font-size: 12px;
+.contact-visual-box h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  color: #1e293b;
 }
 
-.contact-form button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s ease;
+.contact-visual-box p {
+  font-size: 1.125rem;
+  color: #475569;
+  margin: 0.5rem 0;
 }
 
-.contact-form button:hover {
-  background-color: #fff;
-  color: black;
-  border: 1px solid black;
+/* Responsive Tablet */
+@media (max-width: 1024px) {
+  .contact-container {
+    padding: 1.5rem;
+  }
+
+  .contact-content {
+    gap: 2rem;
+  }
 }
 
+/* Mobile Layout - Column */
 @media (max-width: 768px) {
   .contact-container {
-    flex-direction: column;
+    width: 95%;
+    padding: 1rem;
+    min-height: auto;
   }
-  
-  .name-row {
+
+  .contact-content {
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-info-section {
+    padding: 10px;
+    order: 1;
+  }
+
+  .contact-visual-section {
+    order: 2;
+    width: 100%;
+  }
+
+  .contact-visual-box {
+    padding: 2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .contact-visual-box {
+    padding: 1.5rem;
+  }
+
+  .contact-visual-box p {
+    font-size: 1rem;
   }
 }

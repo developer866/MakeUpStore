@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import Carticon from "./Carticon";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,12 +11,14 @@ function Navbar() {
   const handleClicks = () => {
     setShowMenu(!showMenu);
   };
+  const navigate = useNavigate();
 
   return (
     <main>
       <section>
         <div className="navbar">
-          <h4 className="logo">Mali's Touch</h4>
+
+          <h4 className="logo" onClick={() => navigate('/')}>Mali's Touch</h4>
 
           {/* navigation */}
           <section>

@@ -1,50 +1,38 @@
-import React from "react";
-import './contact.css';
+import "./contact.css";
 
-function Contact() {
-  const contactInfo = [
-    {
-      title: "Chat to us",
-      subtitle: "Our beauty team is here to help.",
-      email: "info@malistouch.com",
-      icon: "💬"
-    },
-    {
-      title: "Visit Our Studio",
-      subtitle: "Come say hello at our beauty studio.",
-      address: "123 Beauty Lane, Lekki Phase 1, Lagos, Nigeria",
-      icon: "💄"
-    },
-    {
-      title: "Call Us",
-      subtitle: "Mon-Fri: 9am-7pm | Sat-Sun: 10am-6pm",
-      phone: "+234 802 345 6789",
-      icon: "📞"
-    }
-  ];
-
+export default function Contact() {
   return (
-    <div className="contact-container">
-      <div className="contact-info">
-        <h1>Book Your Appointment</h1>
-        <p>We'd love to help you look and feel amazing. Our beauty experts are ready to transform your look.</p>
+    <main className="contact-container">
+      <div className="contact-content">
 
-        {contactInfo.map((item, index) => (
-          <div key={index} className="contact-card">
-            <div className="icon">{item.icon}</div>
-            <div className="contact-details">
-              <h3>{item.title}</h3>
-              <p>{item.subtitle}</p>
-              {item.email && <p className="highlight">{item.email}</p>}
-              {item.address && <p className="highlight">{item.address}</p>}
-              {item.phone && <p className="highlight">{item.phone}</p>}
-            </div>
+        {/* LEFT — TEXT & FORM */}
+        <section className="contact-info-section">
+          <h1>Contact Us</h1>
+          <p>
+            Have a question, complaint, or want to make an order?  
+            Our team at <strong>Mali's Store</strong> is always ready to assist you.
+          </p>
+
+          <form className="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Email Address" required />
+            <input type="text" placeholder="Subject" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button className="cta-button">Send Message</button>
+          </form>
+        </section>
+
+        {/* RIGHT — IMAGE OR INFO */}
+        <section className="contact-visual-section">
+          <div className="contact-visual-box">
+            <h2>Mali's Store</h2>
+            <p>📍 Lagos, Nigeria</p>
+            <p>☎ +234 812 345 6789</p>
+            <p>✉ contact@malistore.com</p>
           </div>
-        ))}
-      </div>
+        </section>
 
-    </div>
+      </div>
+    </main>
   );
 }
-
-export default Contact;

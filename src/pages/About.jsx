@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './about.css';
+import {useNavigate} from 'react-router-dom';
 
 function About() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -41,8 +43,8 @@ function About() {
           <div className="intro-text">
             <h2>Excellence in Beauty Services</h2>
             <p>
-              At Mali's Touch, we combine expertise, passion, and premium products to deliver 
-              exceptional beauty services. Our team of certified professionals is dedicated to 
+              At Mali's Touch, we combine expertise, passion, and premium products to deliver
+              exceptional beauty services. Our team of certified professionals is dedicated to
               helping you look and feel your absolute best for any occasion.
             </p>
           </div>
@@ -55,11 +57,11 @@ function About() {
           <h2 className="accordion-title">Learn More About Us</h2>
           <div className="accordion-container">
             {accordionData.map((item, index) => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className={`accordion-item ${activeIndex === index ? 'active' : ''}`}
               >
-                <button 
+                <button
                   className="accordion-header"
                   onClick={() => toggleAccordion(index)}
                 >
@@ -83,8 +85,8 @@ function About() {
           <h2>Ready to Experience the Mali's Touch Difference?</h2>
           <p>Book your appointment today and let us bring out your natural beauty</p>
           <div className="cta-buttons">
-            <button className="primary-btn">Book Appointment</button>
-            <button className="secondary-btn">Contact Us</button>
+            <button className="primary-btn" onClick={() => navigate('/booking')}>Book Appointment</button>
+            <button className="secondary-btn" onClick={() => navigate('/Contact')}>Contact Us</button>
           </div>
         </div>
       </div>
