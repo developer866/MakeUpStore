@@ -177,6 +177,7 @@ function Booking() {
                     onChange={(e) => handleChange('date', e.target.value)}
                     min={new Date().toISOString().split('T')[0]}
                     required
+                    placeholder='Date'
                   />
                 </div>
 
