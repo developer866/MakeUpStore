@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function DynamicCart() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const navigate = useNavigate();
+  const count = 0; // Replace with actual cart item count from Redux store or context
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
       {/* Cart Icon */}
-      <FaShoppingCart 
-        size={20} 
+      <FaShoppingCart
+        size={20}
         style={{ cursor: "pointer" }}
-        onClick={() => setCount(count + 1)} // Add item when clicked
+        onClick={() => navigate('/Cart')}
       />
 
       {/* Badge */}

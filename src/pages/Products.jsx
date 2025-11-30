@@ -171,9 +171,9 @@ function Products() {
       <div className="products-header">
         <h1>Our Products</h1>
         <p>Premium beauty products carefully selected for you</p>
-        <div className="cart-icon">
+        {/* <div className="cart-icon">
           🛒 <span className="cart-count">{cartCount}</span>
-        </div>
+        </div> */}
       </div>
 
       <div className="category-filters">
