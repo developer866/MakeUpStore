@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../redux/Features/cart/cartSlice';
 import './Product.css';
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [cartCount, setCartCount] = useState(0);
+  
+  // Get cart data from Redux store
+  const { totalItems } = useSelector(state => state.cart);
+  const dispatch = useDispatch();
 
   const products = [
     {
       id: 1,
       name: 'Luxury Foundation Set',
       category: 'makeup',
-      price: '₦15,000',
+      price: 15000,
+      priceDisplay: '₦15,000',
       originalPrice: '₦18,000',
       image: 'Images/product-1.jpg',
       rating: 5,
@@ -21,7 +27,8 @@ function Products() {
       id: 2,
       name: 'Professional Makeup Brush Set',
       category: 'tools',
-      price: '₦12,000',
+      price: 12000,
+      priceDisplay: '₦12,000',
       originalPrice: null,
       image: 'Images/product-2.jpg',
       rating: 5,
@@ -32,7 +39,8 @@ function Products() {
       id: 3,
       name: 'Hydrating Face Serum',
       category: 'skincare',
-      price: '₦8,500',
+      price: 8500,
+      priceDisplay: '₦8,500',
       originalPrice: '₦10,000',
       image: 'Images/product-3.jpg',
       rating: 5,
@@ -43,7 +51,8 @@ function Products() {
       id: 4,
       name: 'Matte Lipstick Collection',
       category: 'makeup',
-      price: '₦6,000',
+      price: 6000,
+      priceDisplay: '₦6,000',
       originalPrice: null,
       image: 'Images/product-4.jpg',
       rating: 4,
@@ -54,7 +63,8 @@ function Products() {
       id: 5,
       name: 'Vitamin C Face Cream',
       category: 'skincare',
-      price: '₦9,500',
+      price: 9500,
+      priceDisplay: '₦9,500',
       originalPrice: null,
       image: 'Images/product-5.jpg',
       rating: 5,
@@ -65,7 +75,8 @@ function Products() {
       id: 6,
       name: 'Eye Shadow Palette',
       category: 'makeup',
-      price: '₦11,000',
+      price: 11000,
+      priceDisplay: '₦11,000',
       originalPrice: '₦13,500',
       image: 'Images/product-6.jpg',
       rating: 5,
@@ -76,7 +87,8 @@ function Products() {
       id: 7,
       name: 'Hair Growth Oil',
       category: 'haircare',
-      price: '₦7,000',
+      price: 7000,
+      priceDisplay: '₦7,000',
       originalPrice: null,
       image: 'Images/product-7.jpg',
       rating: 5,
@@ -87,7 +99,8 @@ function Products() {
       id: 8,
       name: 'Nail Polish Set (12 Colors)',
       category: 'nails',
-      price: '₦10,000',
+      price: 10000,
+      priceDisplay: '₦10,000',
       originalPrice: null,
       image: 'Images/product-8.jpg',
       rating: 4,
@@ -98,7 +111,8 @@ function Products() {
       id: 9,
       name: 'Cleansing Face Wash',
       category: 'skincare',
-      price: '₦5,500',
+      price: 5500,
+      priceDisplay: '₦5,500',
       originalPrice: null,
       image: 'Images/product-9.jpg',
       rating: 5,
@@ -109,7 +123,8 @@ function Products() {
       id: 10,
       name: 'Contouring Kit Pro',
       category: 'makeup',
-      price: '₦14,000',
+      price: 14000,
+      priceDisplay: '₦14,000',
       originalPrice: '₦16,000',
       image: 'Images/product-10.jpg',
       rating: 5,
@@ -120,7 +135,8 @@ function Products() {
       id: 11,
       name: 'Beauty Blender Set',
       category: 'tools',
-      price: '₦4,500',
+      price: 4500,
+      priceDisplay: '₦4,500',
       originalPrice: null,
       image: 'Images/product-11.jpg',
       rating: 5,
@@ -131,7 +147,8 @@ function Products() {
       id: 12,
       name: 'Hair Treatment Mask',
       category: 'haircare',
-      price: '₦8,000',
+      price: 8000,
+      priceDisplay: '₦8,000',
       originalPrice: null,
       image: 'Images/product-12.jpg',
       rating: 4,
@@ -161,9 +178,15 @@ function Products() {
     ));
   };
 
-  const addToCart = (productName) => {
-    setCartCount(cartCount + 1);
-    alert(`${productName} added to cart!`);
+  const handleAddToCart = (product) => {
+    dispatch(addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      priceDisplay: product.priceDisplay,
+      image: product.image
+    }));
+    alert(`${product.name} added to cart!`);
   };
 
   return (
@@ -172,7 +195,7 @@ function Products() {
         <h1>Our Products</h1>
         <p>Premium beauty products carefully selected for you</p>
         {/* <div className="cart-icon">
-          🛒 <span className="cart-count">{cartCount}</span>
+          🛒 <span className="cart-count">{totalItems}</span>
         </div> */}
       </div>
 
@@ -222,7 +245,7 @@ function Products() {
               <h3 className="product-name">{product.name}</h3>
               
               <div className="product-pricing">
-                <span className="current-price">{product.price}</span>
+                <span className="current-price">{product.priceDisplay}</span>
                 {product.originalPrice && (
                   <span className="original-price">{product.originalPrice}</span>
                 )}
@@ -230,7 +253,7 @@ function Products() {
 
               <button 
                 className="add-to-cart-btn"
-                onClick={() => addToCart(product.name)}
+                onClick={() => handleAddToCart(product)}
                 disabled={!product.inStock}
               >
                 {product.inStock ? '🛒 Add to Cart' : 'Out of Stock'}

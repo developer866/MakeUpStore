@@ -1,11 +1,14 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useSelector} from 'react-redux';
+
 
 export default function DynamicCart() {
   // const [count, setCount] = useState(0);
   const navigate = useNavigate();
-  const count = 0; // Replace with actual cart item count from Redux store or context
+  // const count = 0; // Replace with actual cart item count from Redux store or context
+  const { totalItems } = useSelector(state => state.cart);
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
@@ -17,7 +20,7 @@ export default function DynamicCart() {
       />
 
       {/* Badge */}
-      {count > 0 && (
+      {totalItems > 0 && (
         <span
           style={{
             position: "absolute",
@@ -30,7 +33,7 @@ export default function DynamicCart() {
             padding: "2px 4px",
           }}
         >
-          {count}
+          {totalItems }
         </span>
       )}
     </div>
