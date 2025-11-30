@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/Features/cart/cartSlice';
 import './Product.css';
+import Modal from '../components/Modal.jsx';
 
 function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  
-  // Get cart data from Redux store
-  const { totalItems } = useSelector(state => state.cart);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const dispatch = useDispatch();
 
   const products = [
@@ -166,8 +165,8 @@ function Products() {
     { id: 'tools', name: 'Tools', icon: '🖌️' }
   ];
 
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
+  const filteredProducts = selectedCategory === 'all'
+    ? products
     : products.filter(product => product.category === selectedCategory);
 
   const renderStars = (rating) => {
@@ -188,15 +187,14 @@ function Products() {
     }));
     alert(`${product.name} added to cart!`);
   };
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="products-container">
       <div className="products-header">
         <h1>Our Products</h1>
         <p>Premium beauty products carefully selected for you</p>
-        {/* <div className="cart-icon">
-          🛒 <span className="cart-count">{totalItems}</span>
-        </div> */}
+
       </div>
 
       <div className="category-filters">
@@ -224,26 +222,27 @@ function Products() {
                 {product.badge}
               </span>
             )}
-            
+
             <div className="product-image">
               <img src={product.image} alt={product.name} />
               <div className="product-overlay">
-                <button 
+                <button
                   className="quick-view-btn"
+                  onClick={() => setOpenModal(true)}
                   disabled={!product.inStock}
                 >
                   Quick View
                 </button>
               </div>
-            </div>
 
+            </div>
             <div className="product-info">
               <div className="product-rating">
                 {renderStars(product.rating)}
               </div>
-              
+
               <h3 className="product-name">{product.name}</h3>
-              
+
               <div className="product-pricing">
                 <span className="current-price">{product.priceDisplay}</span>
                 {product.originalPrice && (
@@ -251,7 +250,7 @@ function Products() {
                 )}
               </div>
 
-              <button 
+              <button
                 className="add-to-cart-btn"
                 onClick={() => handleAddToCart(product)}
                 disabled={!product.inStock}
@@ -259,8 +258,12 @@ function Products() {
                 {product.inStock ? '🛒 Add to Cart' : 'Out of Stock'}
               </button>
             </div>
+            <Modal open={openModal} onClose={() => setOpenModal(false)}>
+              Product Details Coming Soon!
+            </Modal>
           </div>
         ))}
+
       </div>
 
       <div className="store-features">

@@ -90,8 +90,8 @@ function Services() {
     { id: 'training', name: 'Training' }
   ];
 
-  const filteredServices = selectedCategory === 'all' 
-    ? services 
+  const filteredServices = selectedCategory === 'all'
+    ? services
     : services.filter(service => service.category === selectedCategory);
 
   return (
@@ -141,7 +141,7 @@ function Services() {
       <div className="cta-section">
         <h2>Ready to Transform Your Look?</h2>
         <p>Book your appointment today and experience the Mali's Touch difference</p>
-        <button className="primary-cta-btn">Schedule Appointment</button>
+        <button className="primary-cta-btn" onClick={() => navigate('/booking')}>Schedule Appointment</button>
       </div>
     </div>
   );
