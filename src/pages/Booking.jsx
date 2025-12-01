@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './booking.css';
-
+import toast, { Toaster } from 'react-hot-toast';
+import emailjs from '@emailjs/browser';
 
 function Booking() {
   const [step, setStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    services: [], // Changed to array for multiple services
+    services: [],
     artist: '',
     date: '',
     time: '',
@@ -61,12 +63,6 @@ function Booking() {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Appointment booked successfully! We will send you a confirmation email.');
-    console.log('Booking Details:', formData);
-  };
-
   const selectedServices = services.filter(s => formData.services.includes(s.id));
   const selectedArtist = artists.find(a => a.id === formData.artist);
   
@@ -79,8 +75,119 @@ function Booking() {
 
   const totalPrice = calculateTotal();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const loadingToast = toast.loading('Sending booking confirmation...');
+
+    try {
+      // Prepare service list for email
+      const servicesList = selectedServices.map((service, index) => 
+        `${index + 1}. ${service.name} - ${service.price} (${service.duration})`
+      ).join('\n');
+
+      // Email template parameters for CLIENT
+      const clientEmailParams = {
+        to_email: formData.email,
+        to_name: `${formData.firstName} ${formData.lastName}`,
+        client_name: `${formData.firstName} ${formData.lastName}`,
+        services: servicesList,
+        artist: selectedArtist.name,
+        date: formData.date,
+        time: formData.time,
+        total_price: `₦${totalPrice.toLocaleString()}`,
+        notes: formData.notes || 'No additional notes',
+      };
+
+      // Email template parameters for BUSINESS OWNER
+      const businessEmailParams = {
+        to_email: 'YOUR_BUSINESS_EMAIL@gmail.com', // Replace with your email
+        client_name: `${formData.firstName} ${formData.lastName}`,
+        client_email: formData.email,
+        client_phone: formData.phone,
+        services: servicesList,
+        artist: selectedArtist.name,
+        date: formData.date,
+        time: formData.time,
+        total_price: `₦${totalPrice.toLocaleString()}`,
+        notes: formData.notes || 'No additional notes',
+      };
+
+      // Send email to client
+      await emailjs.send(
+        'YOUR_SERVICE_ID',        // Replace with your EmailJS Service ID
+        'YOUR_CLIENT_TEMPLATE_ID', // Replace with your Client Template ID
+        clientEmailParams,
+        'YOUR_PUBLIC_KEY'          // Replace with your EmailJS Public Key
+      );
+
+      // Send email to business owner
+      await emailjs.send(
+        'YOUR_SERVICE_ID',           // Replace with your EmailJS Service ID
+        'YOUR_BUSINESS_TEMPLATE_ID', // Replace with your Business Template ID
+        businessEmailParams,
+        'YOUR_PUBLIC_KEY'             // Replace with your EmailJS Public Key
+      );
+
+      toast.dismiss(loadingToast);
+      toast.success('🎉 Booking confirmed! Check your email for details.', {
+        duration: 5000,
+      });
+
+      // Reset form after 2 seconds
+      setTimeout(() => {
+        setFormData({
+          services: [],
+          artist: '',
+          date: '',
+          time: '',
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          notes: ''
+        });
+        setStep(1);
+      }, 2000);
+
+    } catch (error) {
+      toast.dismiss(loadingToast);
+      toast.error('Failed to send booking confirmation. Please try again or contact us directly.', {
+        duration: 6000,
+      });
+      console.error('Email sending error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="booking-container">
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          success: {
+            style: {
+              background: '#10b981',
+              color: '#fff',
+            },
+          },
+          error: {
+            style: {
+              background: '#ef4444',
+              color: '#fff',
+            },
+          },
+          loading: {
+            style: {
+              background: '#3b82f6',
+              color: '#fff',
+            },
+          },
+        }}
+      />
+
       <div className="booking-header">
         <h1>Book Your Appointment</h1>
         <p>Transform your look with our professional beauty services</p>
@@ -178,7 +285,6 @@ function Booking() {
                     onChange={(e) => handleChange('date', e.target.value)}
                     min={new Date().toISOString().split('T')[0]}
                     required
-                    placeholder='Date'
                   />
                 </div>
 
@@ -318,8 +424,12 @@ function Booking() {
               <button type="button" className="back-btn" onClick={prevStep}>
                 Back
               </button>
-              <button type="submit" className="submit-btn">
-                Confirm Booking
+              <button 
+                type="submit" 
+                className="submit-btn"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Processing...' : 'Confirm Booking'}
               </button>
             </div>
           </div>
