@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './booking.css';
 
+
 function Booking() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({

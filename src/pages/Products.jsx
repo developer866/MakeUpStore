@@ -4,8 +4,10 @@ import { addToCart } from '../redux/Features/cart/cartSlice';
 import './Product.css';
 import Modal from '../components/Modal.jsx';
 import { products, categories } from '../data/products.js';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Products() {
+
   const [selectedCategory, setSelectedCategory] = useState('all');
   const dispatch = useDispatch();
   const filteredProducts = selectedCategory === 'all'
@@ -28,12 +30,13 @@ function Products() {
       priceDisplay: product.priceDisplay,
       image: product.image
     }));
-    alert(`${product.name} added to cart!`);
+    toast.success(`${product.name} added to cart!`);
   };
   const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="products-container">
+      <Toaster position="bottom-center" reverseOrder={false} />
       <div className="products-header">
         <h1>Our Products</h1>
         <p>Premium beauty products carefully selected for you</p>

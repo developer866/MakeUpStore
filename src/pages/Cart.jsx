@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { 
-  removeFromCart, 
-  incrementQuantity, 
-  decrementQuantity, 
-  clearCart 
+import {
+  removeFromCart,
+  incrementQuantity,
+  decrementQuantity,
+  clearCart
 } from '../redux/Features/cart/cartSlice';
 import './cart.css';
-
+import toast, { Toaster } from 'react-hot-toast';
 function Cart() {
   const { items, totalItems, totalPrice } = useSelector(state => state.cart);
   const dispatch = useDispatch();
@@ -26,6 +26,8 @@ function Cart() {
 
   return (
     <div className="cart-container">
+      <Toaster position="bottom-center" reverseOrder={false} />
+
       <div className="cart-header">
         <h1>Shopping Cart</h1>
         <p>{totalItems} {totalItems === 1 ? 'item' : 'items'} in your cart</p>
@@ -38,21 +40,21 @@ function Cart() {
               <div className="item-image">
                 <img src={item.image} alt={item.name} />
               </div>
-              
+
               <div className="item-details">
                 <h3>{item.name}</h3>
                 <p className="item-price">{item.priceDisplay}</p>
               </div>
 
               <div className="item-quantity">
-                <button 
+                <button
                   onClick={() => dispatch(decrementQuantity(item.id))}
                   className="qty-btn"
                 >
                   −
                 </button>
                 <span className="quantity">{item.quantity}</span>
-                <button 
+                <button
                   onClick={() => dispatch(incrementQuantity(item.id))}
                   className="qty-btn"
                 >
@@ -64,19 +66,23 @@ function Cart() {
                 <p>₦{(item.price * item.quantity).toLocaleString()}</p>
               </div>
 
-              <button 
-                onClick={() => dispatch(removeFromCart(item.id))}
+              <button
+                onClick={() => {
+                  dispatch(removeFromCart(item.id));
+                  toast.success(`${item.name} removed`);
+                }}
                 className="remove-btn"
               >
                 🗑️
               </button>
+
             </div>
           ))}
         </div>
 
         <div className="cart-summary">
           <h2>Order Summary</h2>
-          
+
           <div className="summary-row">
             <span>Subtotal ({totalItems} items)</span>
             <span>₦{totalPrice.toLocaleString()}</span>
@@ -98,8 +104,8 @@ function Cart() {
             Proceed to Checkout
           </button>
 
-          <button 
-            onClick={() => dispatch(clearCart())}
+          <button
+            onClick={() => (dispatch(clearCart()), toast.success('Cart cleared'))}
             className="clear-cart-btn"
           >
             Clear Cart
