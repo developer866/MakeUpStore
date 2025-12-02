@@ -20,7 +20,7 @@ function Cart() {
         <h1>Shopping Cart</h1>
         <div className="empty-cart">
           <p>🛒 Your cart is empty</p>
-          <a href="/Products" className="continue-shopping-btn">Continue Shopping</a>
+          <a href="/products" className="continue-shopping-btn">Continue Shopping</a>
         </div>
       </div>
     );
