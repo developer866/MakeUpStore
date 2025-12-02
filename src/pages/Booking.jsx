@@ -102,7 +102,7 @@ function Booking() {
 
       // Email template parameters for BUSINESS OWNER
       const businessEmailParams = {
-        to_email: 'YOUR_BUSINESS_EMAIL@gmail.com', // Replace with your email
+        to_email: 'opeyemijoseph866@gmail.com', // Replace with your email
         client_name: `${formData.firstName} ${formData.lastName}`,
         client_email: formData.email,
         client_phone: formData.phone,
