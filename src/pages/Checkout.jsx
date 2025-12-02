@@ -199,7 +199,7 @@ function Checkout() {
             <div ref={invoiceRef} className="invoice-preview">
               <div className="invoice-header">
                 <div className="company-info">
-                  <h2>BEAUTY SERVICES</h2>
+                  <h2>MALI'S SERVICES</h2>
                   <p>Your Trusted Beauty Partner</p>
                   <p>📍 123 Beauty Street, Lagos, Nigeria</p>
                   <p>📞 +234 800 000 0000</p>
