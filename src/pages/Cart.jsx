@@ -14,18 +14,22 @@ function Cart() {
   const { items, totalItems, totalPrice } = useSelector(state => state.cart);
   const dispatch = useDispatch();
 
+  const handleContinueShopping = () => {
+    navigate('/products');
+  }
+
   if (items.length === 0) {
     return (
       <div className="cart-container">
         <h1>Shopping Cart</h1>
-        <div className="empty-cart">
+        <div className="empty-cart" onClick={handleContinueShopping}>
           <p>🛒 Your cart is empty</p>
-          <a href="/products" className="continue-shopping-btn">Continue Shopping</a>
+          <a className="continue-shopping-btn">Continue Shopping</a>
         </div>
       </div>
     );
   }
-  
+
   const handleCheckout = () => {
     navigate('/checkout');
     console.log('Proceeding to checkout');
