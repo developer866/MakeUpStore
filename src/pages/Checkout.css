@@ -1,0 +1,542 @@
+/* Checkout Container */
+.checkout-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+}
+
+.checkout-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Empty Checkout */
+.empty-checkout {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.empty-checkout h2 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.empty-checkout p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.continue-shopping {
+  padding: 12px 30px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.continue-shopping:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+/* Left Section - Instructions */
+.checkout-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.checkout-instructions h1 {
+  color: #1e293b;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.instruction-card {
+  background: white;
+  /* max-height: 100vh; */
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.instruction-step {
+  display: flex;
+  gap: 20px;
+  /* justify-content: ; */
+  height: 10vh;
+  margin-bottom: 25px;
+}
+
+.instruction-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.step-content p {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Account Details */
+.account-details-section {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.account-details-section h2 {
+  color: #1e293b;
+  margin: 0 0 20px 0;
+  font-size: 24px;
+}
+
+.account-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bank-icon {
+  font-size: 24px;
+}
+
+.bank-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-row .label {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.info-row .value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.copy-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.payment-note {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.payment-note p {
+  margin: 0;
+  color: #856404;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Customer Note Section */
+.customer-note-section {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.customer-note-section h3 {
+  color: #1e293b;
+  margin: 0 0 15px 0;
+  font-size: 18px;
+}
+
+.note-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.note-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Right Section - Invoice */
+.invoice-section {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.invoice-wrapper {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-preview {
+  background: white;
+  padding: 40px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.company-info h2 {
+  color: #667eea;
+  margin: 0 0 5px 0;
+  font-size: 28px;
+}
+
+.company-info p {
+  margin: 5px 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.invoice-details {
+  text-align: right;
+}
+
+.invoice-details h3 {
+  color: #1e293b;
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.invoice-details p {
+  margin: 5px 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.invoice-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  margin: 20px 0;
+}
+
+/* Invoice Table */
+.invoice-items table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.invoice-items th {
+  background: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #1e293b;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.invoice-items td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1e293b;
+}
+
+.invoice-items th:last-child,
+.invoice-items td:last-child {
+  text-align: right;
+}
+
+/* Invoice Summary */
+.invoice-summary {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #64748b;
+}
+
+.summary-row.total-row {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e293b;
+  padding-top: 15px;
+  border-top: 2px solid #667eea;
+  margin-top: 10px;
+}
+
+/* Invoice Note */
+.invoice-note {
+  background: #f0f9ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #3b82f6;
+}
+
+.invoice-note p {
+  margin: 5px 0;
+  color: #1e40af;
+  font-size: 14px;
+}
+
+.invoice-note strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Invoice Payment Info */
+.invoice-payment-info {
+  background: #fef3c7;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+  border-left: 4px solid #fbbf24;
+}
+
+.invoice-payment-info h4 {
+  margin: 0 0 10px 0;
+  color: #92400e;
+  font-size: 16px;
+}
+
+.payment-detail p {
+  margin: 5px 0;
+  color: #78350f;
+  font-size: 14px;
+}
+
+.invoice-footer-note {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #fbbf24;
+  color: #78350f;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Invoice Footer */
+.invoice-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.invoice-footer p {
+  margin: 5px 0;
+  color: #667eea;
+  font-size: 16px;
+}
+
+.footer-small {
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+}
+
+/* Download Button */
+.download-invoice-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+}
+
+.download-invoice-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+}
+
+.download-invoice-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Bottom Actions */
+.checkout-actions {
+  max-width: 1400px;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.back-to-cart-btn,
+.continue-shopping-btn {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-to-cart-btn {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.back-to-cart-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.continue-shopping-btn {
+  background: #667eea;
+  color: white;
+}
+
+.continue-shopping-btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .checkout-content {
+    grid-template-columns: 1fr;
+  }
+
+  .invoice-section {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    padding: 20px 10px;
+  }
+
+  .checkout-instructions h1 {
+    font-size: 24px;
+  }
+
+  .invoice-preview {
+    padding: 20px;
+  }
+
+  .invoice-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .invoice-details {
+    text-align: left;
+  }
+
+  .company-info h2 {
+    font-size: 22px;
+  }
+
+  .invoice-items table {
+    font-size: 12px;
+  }
+
+  .invoice-items th,
+  .invoice-items td {
+    padding: 8px 4px;
+  }
+
+  .checkout-actions {
+    flex-direction: column;
+  }
+
+  .back-to-cart-btn,
+  .continue-shopping-btn {
+    width: 50%;
+  }
+}

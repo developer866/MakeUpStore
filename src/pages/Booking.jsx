@@ -116,18 +116,18 @@ function Booking() {
 
       // Send email to client
       await emailjs.send(
-        'YOUR_SERVICE_ID',        // Replace with your EmailJS Service ID
-        'YOUR_CLIENT_TEMPLATE_ID', // Replace with your Client Template ID
+        'service_jbs35ja',        // Replace with your EmailJS Service ID
+        'template_h66gwat', // Replace with your Client Template ID
         clientEmailParams,
-        'YOUR_PUBLIC_KEY'          // Replace with your EmailJS Public Key
+        'GV1ONuZRNlzBYU1cS'          // Replace with your EmailJS Public Key
       );
 
       // Send email to business owner
       await emailjs.send(
-        'YOUR_SERVICE_ID',           // Replace with your EmailJS Service ID
-        'YOUR_BUSINESS_TEMPLATE_ID', // Replace with your Business Template ID
+        'service_jbs35ja',          // Replace with your EmailJS Service ID
+        'template_b0jhaur', // Replace with your Business Template ID
         businessEmailParams,
-        'YOUR_PUBLIC_KEY'             // Replace with your EmailJS Public Key
+        'GV1ONuZRNlzBYU1cS'             // Replace with your EmailJS Public Key
       );
 
       toast.dismiss(loadingToast);

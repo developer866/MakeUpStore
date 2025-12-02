@@ -41,12 +41,19 @@
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 600;
+  /* width: 100%; */
   transition: all 0.3s ease;
 }
-
+/* @media (max-width: 768px) {
+  .continue-shopping-btn{
+    background:black ;
+    width: 50%;
+  }
+} */
 .continue-shopping-btn:hover {
   background: #334155;
 }
+
 
 /* Cart Content */
 .cart-content {

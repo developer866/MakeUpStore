@@ -4,7 +4,7 @@
     padding: 40px 20px;
     font-family: Arial, sans-serif;
     border-radius: 10px;
-    width: 95%;
+    width:95%;
     margin: 0 auto;
 }
 
@@ -60,4 +60,13 @@
     border-top: 1px solid #333;
     padding-top: 15px;
     color: #bbb;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        margin: 0 auto ;
+    }
 }

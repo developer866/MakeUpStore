@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   removeFromCart,
   incrementQuantity,
@@ -9,6 +10,7 @@ import {
 import './cart.css';
 import toast, { Toaster } from 'react-hot-toast';
 function Cart() {
+  const navigate = useNavigate();
   const { items, totalItems, totalPrice } = useSelector(state => state.cart);
   const dispatch = useDispatch();
 
@@ -23,6 +25,11 @@ function Cart() {
       </div>
     );
   }
+  
+  const handleCheckout = () => {
+    navigate('/checkout');
+    console.log('Proceeding to checkout');
+  };
 
   return (
     <div className="cart-container">
@@ -100,7 +107,7 @@ function Cart() {
             <span>₦{(totalPrice + (totalPrice >= 20000 ? 0 : 2000)).toLocaleString()}</span>
           </div>
 
-          <button className="checkout-btn">
+          <button className="checkout-btn " onClick={handleCheckout}>
             Proceed to Checkout
           </button>
 
