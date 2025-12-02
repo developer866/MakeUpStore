@@ -532,7 +532,7 @@
   }
 
   .checkout-actions {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .back-to-cart-btn,
