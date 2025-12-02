@@ -6,7 +6,7 @@ export const products = [
       price: 15000,
       priceDisplay: '₦15,000',
       originalPrice: '₦18,000',
-      image: 'Images/product-1.jpg',
+      image: 'Images/products/foundation_set.jpeg',
       rating: 5,
       inStock: true,
       badge: 'Best Seller'
@@ -18,7 +18,7 @@ export const products = [
       price: 12000,
       priceDisplay: '₦12,000',
       originalPrice: null,
-      image: 'Images/product-2.jpg',
+      image: 'Images/products/Brush_set.jpeg',
       rating: 5,
       inStock: true,
       badge: null
@@ -30,7 +30,7 @@ export const products = [
       price: 8500,
       priceDisplay: '₦8,500',
       originalPrice: '₦10,000',
-      image: 'Images/product-3.jpg',
+      image: 'Images/products/face_secrum.jpeg',
       rating: 5,
       inStock: true,
       badge: 'Sale'
@@ -42,7 +42,7 @@ export const products = [
       price: 6000,
       priceDisplay: '₦6,000',
       originalPrice: null,
-      image: 'Images/product-4.jpg',
+      image: 'Images/products/lipstick.jpeg',
       rating: 4,
       inStock: true,
       badge: 'New'
@@ -54,7 +54,7 @@ export const products = [
       price: 9500,
       priceDisplay: '₦9,500',
       originalPrice: null,
-      image: 'Images/product-5.jpg',
+      image: 'Images/products/face_cream.jpeg',
       rating: 5,
       inStock: true,
       badge: null
@@ -66,7 +66,7 @@ export const products = [
       price: 11000,
       priceDisplay: '₦11,000',
       originalPrice: '₦13,500',
-      image: 'Images/product-6.jpg',
+      image: 'Images/products/eye_shadow.jpeg',
       rating: 5,
       inStock: true,
       badge: 'Sale'
@@ -78,7 +78,7 @@ export const products = [
       price: 7000,
       priceDisplay: '₦7,000',
       originalPrice: null,
-      image: 'Images/product-7.jpg',
+      image: 'Images/products/hair_growth_oil.jpeg',
       rating: 5,
       inStock: true,
       badge: 'Best Seller'
@@ -90,7 +90,7 @@ export const products = [
       price: 10000,
       priceDisplay: '₦10,000',
       originalPrice: null,
-      image: 'Images/product-8.jpg',
+      image: 'Images/products/nail_polish_set.jpeg',
       rating: 4,
       inStock: true,
       badge: null
@@ -102,7 +102,7 @@ export const products = [
       price: 5500,
       priceDisplay: '₦5,500',
       originalPrice: null,
-      image: 'Images/product-9.jpg',
+      image: 'Images/products/fash_wash.png',
       rating: 5,
       inStock: true,
       badge: null
@@ -114,7 +114,7 @@ export const products = [
       price: 14000,
       priceDisplay: '₦14,000',
       originalPrice: '₦16,000',
-      image: 'Images/product-10.jpg',
+      image: 'Images/products/Contouring_kit.jpeg',
       rating: 5,
       inStock: false,
       badge: 'Out of Stock'
@@ -126,7 +126,7 @@ export const products = [
       price: 4500,
       priceDisplay: '₦4,500',
       originalPrice: null,
-      image: 'Images/product-11.jpg',
+      image: 'Images/products/Blender.jpeg',
       rating: 5,
       inStock: true,
       badge: null
@@ -138,7 +138,7 @@ export const products = [
       price: 8000,
       priceDisplay: '₦8,000',
       originalPrice: null,
-      image: 'Images/product-12.jpg',
+      image: 'Images/products/hair_treatment.jpeg',
       rating: 4,
       inStock: true,
       badge: 'New'
