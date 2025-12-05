@@ -49,7 +49,7 @@ function About() {
             </p>
           </div>
           <div className="intro-image">
-            <img src="Images/about-hero.jpg" alt="Mali's Touch Beauty Studio" />
+            <img src="Images/client/Client6.jpg" alt="Mali's Touch Beauty Studio" />
           </div>
         </div>
 

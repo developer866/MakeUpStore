@@ -9,7 +9,7 @@ function Testimonials() {
       id: 1,
       name: 'Chioma Adeleke',
       role: 'Bride',
-      image: 'Images/client-1.jpg',
+      image: 'Images/client/Client1.jpg',
       rating: 5,
       text: 'Mali\'s Touch made my wedding day absolutely perfect! The bridal makeup was flawless and lasted all day. I felt like a queen and received so many compliments.',
       service: 'Bridal Makeup',
@@ -19,7 +19,7 @@ function Testimonials() {
       id: 2,
       name: 'Funke Adebayo',
       role: 'Corporate Executive',
-      image: 'Images/client-2.jpg',
+      image: 'Images/client/Client2.jpg',
       rating: 5,
       text: 'I always get my makeup done here before important meetings and events. The team is professional, punctual, and knows exactly what look works for me.',
       service: 'Event Makeup',
@@ -29,7 +29,7 @@ function Testimonials() {
       id: 3,
       name: 'Amaka Okonkwo',
       role: 'Fashion Influencer',
-      image: 'Images/client-3.jpg',
+      image: 'Images/client/Client4.jpg',
       rating: 5,
       text: 'As someone who works in fashion, I\'m very particular about makeup. Mali\'s Touch never disappoints. Their attention to detail and use of quality products is outstanding!',
       service: 'Photoshoot Makeup',
@@ -39,7 +39,7 @@ function Testimonials() {
       id: 4,
       name: 'Blessing Michael',
       role: 'Student',
-      image: 'Images/client-4.jpg',
+      image: 'Images/client/Client5.jpg',
       rating: 5,
       text: 'The makeup masterclass was worth every penny! I learned so much about techniques and product selection. The instructors were patient and answered all my questions.',
       service: 'Makeup Training',
@@ -49,7 +49,7 @@ function Testimonials() {
       id: 5,
       name: 'Zainab Ibrahim',
       role: 'Entrepreneur',
-      image: 'Images/client-5.jpg',
+      image: 'Images/client/Client6.jpg',
       rating: 5,
       text: 'Their skincare consultation changed my life! Finally found products that work for my skin type. My complexion has improved dramatically.',
       service: 'Skincare Consultation',
@@ -59,7 +59,7 @@ function Testimonials() {
       id: 6,
       name: 'Tope Adeyemi',
       role: 'Model',
-      image: 'Images/client-6.jpg',
+      image: 'Images/client/Client7.jpg',
       rating: 5,
       text: 'I\'ve tried many beauty services in Lagos, but Mali\'s Touch is simply the best. Professional, creative, and always delivers exceptional results.',
       service: 'Full Glam Makeup',
@@ -74,8 +74,8 @@ function Testimonials() {
     { id: 'training', name: 'Training' }
   ];
 
-  const filteredTestimonials = filter === 'all' 
-    ? testimonials 
+  const filteredTestimonials = filter === 'all'
+    ? testimonials
     : testimonials.filter(t => t.category === filter);
 
   const renderStars = (rating) => {
@@ -117,7 +117,7 @@ function Testimonials() {
                 <p className="client-role">{testimonial.role}</p>
               </div>
             </div>
-            
+
             <div className="stars-rating">
               {renderStars(testimonial.rating)}
             </div>
