@@ -51,11 +51,11 @@ function InfiniteSlideshow() {
   const sliderRef = useRef(null);
 
   const images = [
-    "Images/Astro-bg.png",
-    "Images/Astro-bg.png",
-    "Images/Astro-bg.png",
-    "Images/Astro-bg.png",
-    "Images/Astro-bg.png"
+    "Images/client/Client1.jpg",
+    "Images/client/Client2.jpg",
+    "Images/client/Client3.jpg",
+    "Images/client/Client4.jpg",
+    "Images/client/Client5.jpg"
   ];
 
   useEffect(() => {

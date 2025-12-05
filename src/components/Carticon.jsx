@@ -14,7 +14,7 @@ export default function DynamicCart() {
     <div style={{ position: "relative", display: "inline-block" }}>
       {/* Cart Icon */}
       <FaShoppingCart
-        size={20}
+        size={30}
         style={{ cursor: "pointer" }}
         onClick={() => navigate('/Cart')}
       />

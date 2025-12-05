@@ -90,7 +90,7 @@ export const products = [
       price: 10000,
       priceDisplay: '₦10,000',
       originalPrice: null,
-      image: 'Images/products/nail_polish_set.jpeg',
+      image: 'Images/products/nail_polish.jpeg',
       rating: 4,
       inStock: true,
       badge: null
