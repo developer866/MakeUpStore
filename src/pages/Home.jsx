@@ -21,7 +21,7 @@ function Home() {
 
         <div className='home-content'>
           <section className='hero-section'>
-            <h1>Welcome to Mali's Touch</h1>
+            <h1>Welcome to <i> Mali's Touch</i> </h1>
             <p>Your one-stop shop for beauty products and makeup services.</p>
             <p>Discover premium beauty products and professional makeup services tailored just for you. From luxurious skincare to stunning makeup looks, we bring out your natural beauty.</p>
             <button className='cta-button' onClick={() => navigate('/services')}>Explore Our Services</button>

@@ -173,3 +173,15 @@
 .menu-links a:hover {
   color: #a0430a;
 }
+.BookServiceButton{
+  /* background: #ff69b4; */
+  /* color: white; */
+  color: black;
+  font-weight: 700;
+  /* font-size: 1rem; */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
