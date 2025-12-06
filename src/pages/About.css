@@ -1,6 +1,7 @@
 /* About Container */
 .about-container {
   width: 100%;
+  /* border: 1px solid; */
 }
 
 /* About Hero */
@@ -27,7 +28,7 @@
 /* About Content */
 .about-content {
   width: 90%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 3rem 2rem;
 }
@@ -252,6 +253,7 @@
   .intro-section {
     gap: 2rem;
     margin-bottom: 3rem;
+    text-align: center;
   }
 
   .intro-image {
