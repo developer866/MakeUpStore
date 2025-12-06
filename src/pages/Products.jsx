@@ -70,7 +70,7 @@ function Products() {
             )}
 
             <div className="product-image">
-              <img src={product.image} alt={product.name} />
+              <img src={product.image} alt={product.name}     loading="lazy" />
               <div className="product-overlay">
                 <button
                   className="quick-view-btn"

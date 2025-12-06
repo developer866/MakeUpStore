@@ -1,141 +1,291 @@
-/* Contact Container */
+/* contact.css */
+
 .contact-container {
-  width: 90%;
-  min-height: 80vh;
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #fff5eb 0%, #ffffff 50%, #fef3e2 100%); */
+  padding: 3rem 1.5rem;
+}
+
+.contact-content {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* LEFT SECTION - FORM */
+.contact-info-section {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+}
+
+.contact-info-section h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.contact-info-section > p {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.contact-info-section strong {
+  color: #ea580c;
+}
+
+/* FORM STYLES */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ea580c;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-/* Two-column layout */
-.contact-content {
-  width: 100%;
-  max-width: 1200px;
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.4);
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.info-note {
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #374151;
   display: flex;
-  gap: 3rem;
-  align-items: center;
+  gap: 0.75rem;
+  align-items: start;
 }
 
-/* Left side (text + form) */
-.contact-info-section {
-  flex: 1;
+.info-icon {
+  color: #22c55e;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* RIGHT SECTION - STORE INFO */
+.contact-visual-section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.contact-info-section h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #1e293b;
-  font-weight: bold;
-  margin: 0;
-}
-
-.contact-info-section p {
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
-  color: #64748b;
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* Form Styling */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #cbd5e1;
-  font-size: 1rem;
-  color: #1e293b;
-  outline: none;
-  transition: border 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #1e293b;
-}
-
-/* Right Side Visual Box */
-.contact-visual-section {
-  flex: 1;
-}
-
 .contact-visual-box {
-  /* width: 100%; */
-  padding: 3rem 2rem;
-  border-radius: 1rem;
-  background: #f1f5f9;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(234, 88, 12, 0.3);
+  padding: 2.5rem;
+  color: white;
 }
 
 .contact-visual-box h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: 1rem;
-  color: #1e293b;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
 }
 
-.contact-visual-box p {
+.contact-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.contact-details h3 {
   font-size: 1.125rem;
-  color: #475569;
-  margin: 0.5rem 0;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
-/* Responsive Tablet */
-@media (max-width: 1024px) {
-  .contact-container {
-    padding: 1.5rem;
-  }
-
-  .contact-content {
-    gap: 2rem;
-  }
+.contact-details p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
 }
 
-/* Mobile Layout - Column */
+/* BUSINESS HOURS CARD */
+.business-hours-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+.business-hours-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-day {
+  font-weight: 600;
+  color: #374151;
+}
+
+.hours-time {
+  color: #6b7280;
+}
+
+.hours-closed {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* WHY CHOOSE US CARD */
+.why-choose-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #fbbf24;
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.why-choose-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.why-choose-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.why-choose-list li {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  color: #374151;
+}
+
+.checkmark {
+  color: #f97316;
+  font-weight: 700;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .contact-container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 1rem;
-    min-height: auto;
+    padding: 1.5rem 1rem;
   }
-
-  .contact-content {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .contact-info-section {
-    padding: 10px;
-    order: 1;
-  }
-
-  .contact-visual-section {
-    order: 2;
+  .contact-form input,
+  .contact-form textarea {
     width: 90%;
     margin: 0 auto;
   }
-
-  .contact-visual-box {
-    padding: 2rem;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .contact-visual-box {
+  .contact-info-section,
+  .contact-visual-box,
+  .business-hours-card,
+  .why-choose-card {
     padding: 1.5rem;
   }
 
-  .contact-visual-box p {
-    font-size: 1rem;
+  .contact-info-section h1,
+  .contact-visual-box h2 {
+    font-size: 2rem;
   }
 }

@@ -38,7 +38,7 @@ function Services() {
         {filteredServices.map(service => (
           <div key={service.id} className="service-card">
             <div className="service-image">
-              <img src={service.image} alt={service.title} />
+              <img src={service.image} alt={service.title}  loading="lazy"/>
               <div className="service-overlay" onClick={() => navigate('/booking')}>
                 <button className="book-btn" >Book Now</button>
               </div>
