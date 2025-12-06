@@ -9,12 +9,14 @@ import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Footer from './components/Footer'
 import Services from './pages/Services'
+import Social from './components/Social'
 
 function App() {
 
   return (
     <main className="container" >
-      <Navbar />
+       <Navbar  />
+       <Social />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
@@ -32,3 +34,4 @@ function App() {
 }
 
 export default App
+

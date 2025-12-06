@@ -6,7 +6,7 @@
 /* About Hero */
 .about-hero {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
   /* background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); */
 }
 
@@ -20,7 +20,7 @@
 .about-hero p {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: #64748b;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -240,7 +240,9 @@
 /* Tablet Styles */
 @media (max-width: 1024px) {
   .about-hero {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1rem;
+    margin: 0;
+    /* width: 70%; */
   }
 
   .about-content {
