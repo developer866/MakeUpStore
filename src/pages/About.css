@@ -255,6 +255,10 @@
     margin-bottom: 3rem;
     text-align: center;
   }
+  .intro-text p{
+    text-align: left;
+    /* padding: 0 1rem; */
+  }
 
   .intro-image {
     height: 350px;
@@ -270,9 +274,14 @@
   .about-hero {
     padding: 2.5rem 1rem;
 
-    width: 80%;
+    width: 90%;
 
     margin: 0 auto;
+  }
+
+   .intro-text p{
+    text-align: left;
+    /* padding: 0 1rem; */
   }
 
   .about-content {
