@@ -9,6 +9,6 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Welcome to the Makeup Store API');
 });
-app.use('/products', productRoutes)
+app.use('/', productRoutes)
 
 export default app;
