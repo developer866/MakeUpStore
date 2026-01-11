@@ -11,12 +11,14 @@ import Footer from './components/Footer'
 import Services from './pages/Services'
 import Social from './components/Social'
 
+import Admin from './pages/Admin/Admin'
+
 function App() {
 
   return (
     <main className="container" >
-       <Navbar  />
-       <Social />
+      <Navbar />
+      <Social />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
@@ -26,7 +28,7 @@ function App() {
         <Route path="/Cart" element={<Cart />} />
         {/* <Route path="/Productdetails" element={<Productdetails />} /> */}
         <Route path="/Checkout" element={<Checkout />} />
-       
+        <Route path="/Admin" element={<Admin />} />
       </Routes>
       <Footer />
     </main>
