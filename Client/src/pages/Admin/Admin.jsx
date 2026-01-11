@@ -60,6 +60,7 @@ function Admin() {
                             <p>{product.productDescription}</p>
                             <p><strong>₦{product.productPrice}</strong></p>
                             <span>{product.productCategory}</span>
+                            <button >delete product</button>
                         </div>
                     ))
                 )}
