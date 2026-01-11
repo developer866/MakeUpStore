@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useEffect } from 'react';
+import DeleteProduct from './DeleteProduct';
 
 function Admin() {
     const styles = {
@@ -18,11 +19,11 @@ function Admin() {
             boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
         }
     };
-    
+
     const [products, setProducts] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(null);
-    
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -44,27 +45,40 @@ function Admin() {
         }
         fetchProduct();
     }, [])
-    
+
     if (loading) return <div>Loading products...</div>;
     if (error) return <div>Error: {error}</div>;
-    
+    const handleDeleteFromUI = (id) => {
+        setProducts(products.filter(product => product._id !== id));
+    }
+
     return (
         <main>
-            <div style={styles.container}>
-                {products.length === 0 ? (
-                    <p>No products available</p>
-                ) : (
-                    products.map((product) => (
-                        <div key={product._id} style={styles.card}>
-                            <h3>{product.productName}</h3>
-                            <p>{product.productDescription}</p>
-                            <p><strong>₦{product.productPrice}</strong></p>
-                            <span>{product.productCategory}</span>
-                            <button >delete product</button>
-                        </div>
-                    ))
-                )}
-            </div>
+            <section>
+
+                <div style={styles.container}>
+                    {products.length === 0 ? (
+                        <p>No products available</p>
+                    ) : (
+                        products.map((product) => (
+                            <div key={product._id} style={styles.card}>
+                                <h3>{product.productName}</h3>
+                                <p>{product.productDescription}</p>
+                                <p><strong>₦{product.productPrice}</strong></p>
+                                <span>{product.productCategory}</span>
+                                <DeleteProduct id={product._id}
+                                    onDelete={handleDeleteFromUI} />
+                            </div>
+                        ))
+                    )}
+                </div>
+            </section>
+            {/* add product  */}
+            <section>
+                <form action="" method="post">
+
+                </form>
+            </section>
         </main>
     )
 }
