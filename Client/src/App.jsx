@@ -10,6 +10,7 @@ import Products from './pages/Products'
 import Footer from './components/Footer'
 import Services from './pages/Services'
 import Social from './components/Social'
+import AddProduct from './pages/Admin/AddProduct'
 
 import Admin from './pages/Admin/Admin'
 
@@ -29,6 +30,7 @@ function App() {
         {/* <Route path="/Productdetails" element={<Productdetails />} /> */}
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/Admin" element={<Admin />} />
+        <Route path='/Admin/AddPRoduct' element={<AddProduct />}/>
       </Routes>
       <Footer />
     </main>
