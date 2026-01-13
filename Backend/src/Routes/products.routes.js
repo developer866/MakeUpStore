@@ -1,14 +1,21 @@
+// routes/product.route.js
 import { Router } from "express";
-import { getAllProducts, createProduct, updateProduct, deleteProduct } from "../controller/products.controller.js";   
+import { protect, adminOnly } from "../middleware/auth.middleware.js";
+import {
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  getAllProducts,
+} from "../controller/products.controller.js";
 
 const router = Router();
 
-router.get('/products', getAllProducts);
-router.post('/createProduct', createProduct);
-router.put('/products/:id', updateProduct);
-router.delete('/products/:id', deleteProduct);
+// Public route (anyone can view products)
+router.get("/", getAllProducts);
 
-router.get("product/test", (req, res) => {
-    res.send("Products route is working!");
-})
+// Protected routes (admin only)
+router.post("/", protect, adminOnly, createProduct);
+router.put("/:id", protect, adminOnly, updateProduct);
+router.delete("/:id", protect, adminOnly, deleteProduct);
+
 export default router;
