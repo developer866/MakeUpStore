@@ -1,4 +1,4 @@
-// controllers/staff.controller.js
+
 import Staff from "../models/staff.model.js";
 import jwt from "jsonwebtoken";
 
@@ -11,9 +11,6 @@ const generateToken = (id, role) => {
 
 // ============ AUTH ENDPOINTS ============
 
-// @desc    Register new staff (Admin only)
-// @route   POST /api/staff/register
-// @access  Private/Admin
 export const registerStaff = async (req, res) => {
   try {
     const { username, password, fullName, email, phone, role } = req.body;
@@ -54,9 +51,6 @@ export const registerStaff = async (req, res) => {
   }
 };
 
-// @desc    Login staff
-// @route   POST /api/staff/login
-// @access  Public
 export const loginStaff = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -111,11 +105,6 @@ export const loginStaff = async (req, res) => {
   }
 };
 
-// ============ ADMIN ENDPOINTS ============
-
-// @desc    Get all staff
-// @route   GET /api/staff
-// @access  Private/Admin
 export const getAllStaff = async (req, res) => {
   try {
     const staff = await Staff.find().select("-password").sort("-createdAt");
@@ -126,9 +115,6 @@ export const getAllStaff = async (req, res) => {
   }
 };
 
-// @desc    Get single staff
-// @route   GET /api/staff/:id
-// @access  Private/Admin
 export const getStaffById = async (req, res) => {
   try {
     const staff = await Staff.findById(req.params.id).select("-password");
@@ -144,9 +130,7 @@ export const getStaffById = async (req, res) => {
   }
 };
 
-// @desc    Update staff (Admin can update anything)
-// @route   PUT /api/staff/:id
-// @access  Private/Admin
+
 export const updateStaff = async (req, res) => {
   try {
     const { username, fullName, email, phone, role, availability, isActive } = req.body;
@@ -182,9 +166,7 @@ export const updateStaff = async (req, res) => {
   }
 };
 
-// @desc    Delete staff
-// @route   DELETE /api/staff/:id
-// @access  Private/Admin
+
 export const deleteStaff = async (req, res) => {
   try {
     const staff = await Staff.findById(req.params.id);
@@ -210,10 +192,6 @@ export const deleteStaff = async (req, res) => {
 };
 
 // ============ STAFF ENDPOINTS ============
-
-// @desc    Update own availability (Staff only)
-// @route   PATCH /api/staff/availability
-// @access  Private/Staff
 export const updateAvailability = async (req, res) => {
   try {
     const { availability } = req.body;
@@ -241,9 +219,7 @@ export const updateAvailability = async (req, res) => {
   }
 };
 
-// @desc    Get own profile
-// @route   GET /api/staff/me
-// @access  Private
+
 export const getMe = async (req, res) => {
   try {
     const staff = await Staff.findById(req.user._id).select("-password");

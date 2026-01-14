@@ -44,26 +44,26 @@ function App() {
         <Route
           path="/staff/dashboard"
           element={
-            <ProtectedRoute requiredRole="staff">
-              <StaffDashboard />
-            </ProtectedRoute>
+
+            <StaffDashboard />
+
           }
         />
         <Route
           path="/admin"
           element={
-            <ProtectedRoute requiredRole="admin">
+            // <ProtectedRoute requiredRole="admin">
               <Admin />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           }
         />
 
         <Route
           path="/admin/staff"
           element={
-            <ProtectedRoute requiredRole="admin">
+            
               <AdminStaffManagement />
-            </ProtectedRoute>
+        
           }
         />
 
